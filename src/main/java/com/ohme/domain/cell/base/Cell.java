@@ -2,26 +2,25 @@ package com.ohme.domain.cell.base;
 
 import com.ohme.domain.rule.Rule;
 import com.ohme.util.CellState;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 public abstract class Cell {
 
     protected CellState state;
 
     private List<Cell> neighbours;
 
-    protected abstract void recalculateState(Rule rule);
-
-    public void setState(CellState state) {
-        this.state = state;
+    public void addNeighbour(Cell neighbour) {
+        neighbours.add(neighbour);
     }
 
-    public CellState getState() {
-        return state;
+    public boolean isAlive() {
+        return state.equals(CellState.ALIVE);
     }
 
-    public List<Cell> getNeighbours() {
-        return neighbours;
-    }
 }

@@ -1,4 +1,4 @@
-package com.ohme.gameoflife;
+package com.ohme;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -25,7 +25,7 @@ public class StandardRule implements Rule {
             }
             return CellState.ALIVE;
         } else {
-            if(LIVE_NEIGHBOURS_TO_BECOME_ALIVE == 3) {
+            if(countOfLiveNeighbours == LIVE_NEIGHBOURS_TO_BECOME_ALIVE) {
                 return CellState.ALIVE;
             }
             return CellState.DEAD;
