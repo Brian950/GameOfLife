@@ -3,8 +3,6 @@ package com.ohme.service.factory.cell.standard;
 import com.ohme.domain.cell.base.Cell;
 import com.ohme.domain.cell.standard.StandardCell;
 import com.ohme.service.factory.cell.CellFactory;
-import com.ohme.service.factory.universe.UniverseFactory;
-import com.ohme.service.factory.universe.glider.GliderUniverseFactory;
 
 public class StandardCellFactory implements CellFactory {
 

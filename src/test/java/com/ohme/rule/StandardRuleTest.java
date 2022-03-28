@@ -14,10 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class StandardRuleTest {
 
-    private final int LIVE_NEIGHBOURS_TO_STAY_ALIVE = 2;
-    private final int MINIMUM_LIVE_NEIGHBOURS_TO_DIE = 4;
-    private final int LIVE_NEIGHBOURS_TO_BECOME_ALIVE = 3;
-
     private final Rule STANDARD_RULE = new StandardRule();
 
     @ParameterizedTest

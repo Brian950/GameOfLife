@@ -1,6 +1,5 @@
 package com.ohme.domain.cell.base;
 
-import com.ohme.domain.rule.Rule;
 import com.ohme.util.CellState;
 import lombok.Getter;
 import lombok.Setter;
