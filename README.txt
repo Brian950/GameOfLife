@@ -5,6 +5,13 @@ The GameOfLifeController is used to progress the universe evolution through HTTP
 Step 1:
 Run the Spring Boot application, which will default to http://localhost:8080
 
+This can be done through an IDE or by using the gameoflife-0.0.1-SNAPSHOT.jar in the target folder (Using the below cmd).
+
+To create the jar run: mvn clean package
+This will put the .jar in the target folder.
+
+java -jar gameoflife-0.0.1-SNAPSHOT.jar
+
 Step 2:
 In your browser, navigate to http://localhost:8080/state
 
