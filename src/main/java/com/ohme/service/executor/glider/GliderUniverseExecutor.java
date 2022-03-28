@@ -6,14 +6,16 @@ import com.ohme.domain.universe.base.Universe;
 import com.ohme.service.executor.UniverseExecutor;
 import com.ohme.service.factory.universe.UniverseFactory;
 import com.ohme.service.factory.universe.glider.GliderUniverseFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
+@Qualifier("glider")
 public class GliderUniverseExecutor implements UniverseExecutor {
 
-    private int DIMENSION = 25;
+    private final int DIMENSION = 25;
 
-    private final UniverseFactory GLIDER_UNIVERSE_FACTORY = new GliderUniverseFactory();
+    private final UniverseFactory GLIDER_UNIVERSE_FACTORY = GliderUniverseFactory.getInstance();
 
     private Universe universe = GLIDER_UNIVERSE_FACTORY.createUniverse(DIMENSION);
 
@@ -21,7 +23,7 @@ public class GliderUniverseExecutor implements UniverseExecutor {
 
     @Override
     public Universe tick() {
-        // Get a new universe in order to update all cells simultaneously by keeping their original state
+        // A dummy universe is used as updating the original would affect the calculations of other cells
         Universe resultUniverse = GLIDER_UNIVERSE_FACTORY.createUniverse(DIMENSION);
         for(int i = 0; i < DIMENSION; i++) {
             for(int j = 0; j < DIMENSION; j++) {

@@ -8,7 +8,7 @@ import com.ohme.util.CellState;
 
 public class GliderUniverse extends Universe {
 
-    private final CellFactory standardCellFactory = new StandardCellFactory();
+    private final CellFactory standardCellFactory = StandardCellFactory.getInstance();
 
     public GliderUniverse(int dimension) {
         this.dimension = dimension;
@@ -50,7 +50,7 @@ public class GliderUniverse extends Universe {
     }
 
     /*
-        Glider pattern -> c = center point, x = active cells
+        Glider pattern -> c = center point, x = alive cells
         [ ][ ][ ][ ][ ]
         [ ][ ][x][ ][ ]
         [ ][ ][c][x][ ]

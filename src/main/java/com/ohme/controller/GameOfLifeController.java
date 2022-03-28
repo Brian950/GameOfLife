@@ -1,14 +1,17 @@
 package com.ohme.controller;
 
 import com.ohme.service.executor.UniverseExecutor;
-import com.ohme.service.executor.glider.GliderUniverseExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GameOfLifeController {
 
-    private final UniverseExecutor executor = new GliderUniverseExecutor();
+    @Autowired
+    @Qualifier("glider")
+    private UniverseExecutor executor;
 
     /*
         Returns the current universe state

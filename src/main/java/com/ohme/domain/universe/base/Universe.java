@@ -47,4 +47,24 @@ public abstract class Universe {
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if(! (o instanceof Universe)) return false;
+        Universe other = (Universe) o;
+        for(int i = 0; i < dimension; i++) {
+            for(int j = 0; j < dimension; j++) {
+                if(!universe[i][j].getState().equals(other.getUniverse()[i][j].getState())) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        return 31 * result * universe.hashCode();
+    }
+
 }
